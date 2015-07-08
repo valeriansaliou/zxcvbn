@@ -1,6 +1,5 @@
 # initialize matcher lists
 MATCHERS = [
-  l33t_match,
   digits_match, year_match, date_match,
   repeat_match, sequence_match,
   spatial_match

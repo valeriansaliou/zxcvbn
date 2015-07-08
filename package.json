@@ -1,6 +1,6 @@
 {
     "name": "zxcvbn",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "realistic password strength estimation",
     "main": "index.js",
     "scripts": {

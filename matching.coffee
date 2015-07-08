@@ -131,26 +131,6 @@ enumerate_l33t_subs = (table) ->
     sub_dicts.push sub_dict
   sub_dicts
 
-l33t_match = (password) ->
-  matches = []
-  for sub in enumerate_l33t_subs relevant_l33t_subtable password
-    break if empty sub # corner case: password has no relevant subs.
-    for matcher in DICTIONARY_MATCHERS
-      subbed_password = translate password, sub
-      for match in matcher(subbed_password)
-        token = password[match.i..match.j]
-        if token.toLowerCase() == match.matched_word
-          continue # only return the matches that contain an actual substitution
-        match_sub = {} # subset of mappings in sub that are in use for this match
-        for subbed_chr, chr of sub when token.indexOf(subbed_chr) != -1
-          match_sub[subbed_chr] = chr
-        match.l33t = true
-        match.token = token
-        match.sub = match_sub
-        match.sub_display = ("#{k} -> #{v}" for k,v of match_sub).join(', ')
-        matches.push match
-  matches
-
 # ------------------------------------------------------------------------------
 # spatial match (qwerty/dvorak/keypad) -----------------------------------------
 # ------------------------------------------------------------------------------
