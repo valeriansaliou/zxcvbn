@@ -36,11 +36,7 @@ path inside `zxcvbn-async.js` point to `zxcvbn.js`. A relative path works
 well.
 
 `zxcvbn-async.js` is a tiny 350 bytes. On `window.load`, after your page
-loads and renders, it'll fetch `zxcvbn.js`, which is more like 700k (330k
-gzipped), most of which is a series of dictionaries.
-
-I haven't found 700k to be too large -- especially because a password
-isn't the first thing a user typically enters on a registration form.
+loads and renders, it'll fetch `zxcvbn.js`.
 
 `zxcvbn.js` can also be included directly:
 
@@ -104,8 +100,6 @@ For development, include these scripts instead of `zxcvbn.js`:
 ``` html
 <script type="text/javascript" src="adjacency_graphs.js">
 </script>
-<script type="text/javascript" src="frequency_lists.js">
-</script>
 <script type="text/javascript" src="matching.js">
 </script>
 <script type="text/javascript" src="scoring.js">
@@ -118,7 +112,6 @@ Data lives in the first two scripts. These get produced by:
 
 ```
 scripts/build_keyboard_adjacency_graph.py
-scripts/build_frequency_lists.py
 ```
 
 `matching.coffee`, `scoring.coffee`, and `init.coffee` make up the rest of the
@@ -142,10 +135,6 @@ http://xato.net/passwords/more-top-worst-passwords
 
 and for his 2006 book,
 "Perfect Passwords: Selection, Protection, Authentication"
-
-Huge thanks to Wiktionary contributors for building a frequency list
-of English as used in television and movies:
-http://en.wiktionary.org/wiki/Wiktionary:Frequency_lists
 
 Researchers encourage others to model their strength meters after this one: http://www.concordia.ca/cunews/main/stories/2015/03/25/does-your-password-pass-muster.html
 
