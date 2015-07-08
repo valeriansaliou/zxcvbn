@@ -7,6 +7,8 @@ _/\/\/\/\/\__/\/\__/\/\____/\/\/\/\______/\______/\/\/\/\____/\/\__/\/\_
 ________________________________________________________________________
 ```
 
+**Important: this fork of zxcvbn, made by Dropbox, disables dictionary-based filters, making the library x50 less in size (literally!).**
+
 `zxcvbn`, named after a crappy password, is a JavaScript password strength
 estimation library. Use it to implement a custom strength bar on a
 signup form near you!
